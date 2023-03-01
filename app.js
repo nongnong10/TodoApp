@@ -41,7 +41,14 @@ function deleteTask(event){
     const item = event.target;
     console.log(event.target);
     if (item.classList[0] == 'delete-btn'){
-        item.parentElement.remove();
+        const todo = item.parentElement;
+        todo.classList.add('fall');
+        // todo.remove();
+        todo.addEventListener("transitionend", function(){
+            todo.remove();
+        });
     }
-
+    if (item.classList[0] == 'done-btn'){
+        item.parentElement.classList.toggle('done');
+    }
 }
