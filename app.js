@@ -5,6 +5,7 @@ const taskList = document.querySelector(".task-list");
 
 //Event listener
 taskButton.addEventListener("click", addTask);
+taskList.addEventListener("click", deleteTask);
 
 //Fuctions
 function addTask(event){
@@ -34,4 +35,13 @@ function addTask(event){
 
     taskList.appendChild(taskDiv);
     taskInput.value = "";
+}
+
+function deleteTask(event){
+    const item = event.target;
+    console.log(event.target);
+    if (item.classList[0] == 'delete-btn'){
+        item.parentElement.remove();
+    }
+
 }
