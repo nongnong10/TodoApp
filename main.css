@@ -115,19 +115,18 @@ form button:hover{
 select{
     appearance: none;
     outline: none;
-    /* border: none; */
     color: black;
     width: 10rem;
     cursor: pointer;
-    padding: 1rem;
-
+    padding: 0.5rem;
+    font-size: 1.5rem;
+    border: none;
 }
 
 .select{
     margin: 1rem;
     position: relative;
     overflow: hidden;
-    /* font-size: 0.5rem; */
 }
 
 .select::after{
@@ -135,12 +134,17 @@ select{
     content: "\25BC";
     position: absolute;
     color: black;
-    background-color: aliceblue;
+    background-color: white;
     top: 0;
     right: 0;
     padding: 1rem;
     pointer-events: none;
     transition: all 0.3s ease;
+}
+
+.option:hover{
+    color: aliceblue;
+    background-color:palevioletred;
 }
 
 .select:hover::after{
