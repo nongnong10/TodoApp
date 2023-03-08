@@ -2,12 +2,13 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
 }
 
 body{
     background-image: linear-gradient(to right, rgb(150, 230, 237), pink);
     color: rgb(255, 255, 255);
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Poppins', sans-serif;
     min-width: 120px;
     justify-content: center;
     align-items: center;
@@ -31,6 +32,15 @@ button{
 form input, form button{
     padding: 0.5rem;
     font-size: 2rem;
+    border: none;
+    background: white;
+}
+
+form button{
+    color: palevioletred;
+    background-color: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
 }
 
 form button:hover{
@@ -51,7 +61,7 @@ form button:hover{
 
 .task{
     margin: 0.5rem;
-    background-color: aliceblue;
+    background-color: white;
     color: black;
     font-size: 1.5rem;
     display: flex;
@@ -71,7 +81,9 @@ form button:hover{
 .delete-btn, .done-btn{
     color: black;
     background-color:aliceblue;
+    border: none;
     padding: 1rem;
+    cursor: pointer;
     font-size: 1rem;
 }
 
@@ -79,6 +91,11 @@ form button:hover{
 .done-btn:hover{
     color: aliceblue;
     background-color:palevioletred;
+}
+
+.fa-trash,
+.fa-check{
+    pointer-events: none;
 }
 
 .task-item{
@@ -93,4 +110,40 @@ form button:hover{
 .fall{
     transform: translateY(8rem) rotateZ(10deg);
     opacity: 0;
+}
+
+select{
+    appearance: none;
+    outline: none;
+    /* border: none; */
+    color: black;
+    width: 10rem;
+    cursor: pointer;
+    padding: 1rem;
+
+}
+
+.select{
+    margin: 1rem;
+    position: relative;
+    overflow: hidden;
+    /* font-size: 0.5rem; */
+}
+
+.select::after{
+    /* Dau mui ten */
+    content: "\25BC";
+    position: absolute;
+    color: black;
+    background-color: aliceblue;
+    top: 0;
+    right: 0;
+    padding: 1rem;
+    pointer-events: none;
+    transition: all 0.3s ease;
+}
+
+.select:hover::after{
+    color: aliceblue;
+    background-color:palevioletred;
 }
